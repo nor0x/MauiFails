@@ -9,37 +9,7 @@
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
-            <Border
-                HorizontalOptions="Fill"
-                HeightRequest="250"
-                BackgroundColor="Transparent"
-                StrokeThickness="0">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="20" />
-                </Border.StrokeShape>
-                <Border.Background>
-                    <RadialGradientBrush Center="0.98,0.9">
-                        <GradientStop
-                            Offset="0.1"
-                            Color="#F79256" />
-                        <GradientStop
-                            Offset="0.3"
-                            Color="#7DCFB6" />
-                        <GradientStop
-                            Offset="0.6"
-                            Color="#1D4E89" />
-                        <GradientStop
-                            Offset="1.0"
-                            Color="#18181C" />
-                    </RadialGradientBrush>
-                </Border.Background>
-            </Border>
-
-            <Border StrokeThickness="0">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="20" />
-                </Border.StrokeShape>
-                <Grid
+            <Grid
                     HeightRequest="180"
                     IsClippedToBounds="True">
                     <Image
@@ -47,29 +17,7 @@
                         HorizontalOptions="End"
                         WidthRequest="400"
                         Aspect="AspectFill" />
-                    <Border
-                        HorizontalOptions="Fill"
-                        VerticalOptions="Fill"
-                        BackgroundColor="Transparent"
-                        StrokeThickness="0">
-                        <Border.Background>
-                            <LinearGradientBrush>
-                                <GradientStop
-                                    Color="#F9DB6D"
-                                    Offset="0" />
-                                <GradientStop
-                                    Color="#464D77"
-                                    Offset="0.4" />
-                                <GradientStop
-                                    Color="#36827F"
-                                    Offset="0.1" />
-                                <GradientStop
-                                    Color="Transparent"
-                                    Offset="0.9" />
-                            </LinearGradientBrush>
-                        </Border.Background>
-                    </Border>
-                    <Label
+                                       <Label
                         Text="Another Fail"
                         FontSize="32"
                         TextColor="White"
@@ -77,7 +25,6 @@
                         Margin="12" />
 
                 </Grid>
-            </Border>
             <Image
                 Source="dotnet_bot.png"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
@@ -102,7 +49,49 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
+            <Border x:Name="MovingBtnGrid"
+                    WidthRequest="300"
+                    HeightRequest="70"
+                    BackgroundColor="Orange">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BorderTapped" />
+                </Border.GestureRecognizers>
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="24" />
+                </Border.StrokeShape>
+                <Grid  BackgroundColor="Green" Margin="12">
+                    <Label
+                x:Name="MovingBtn"
+                Text="I'm moving"
+                ZIndex="9999"
+                HorizontalOptions="Center" >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnMovingButtonClicked" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+            </Border>
+            <Grid
+                    HeightRequest="180"
+                    IsClippedToBounds="True">
+                <Image
+                        Source="https://images.unsplash.com/photo-1656383901557-9f4db8483d3b"
+                        HorizontalOptions="End"
+                        WidthRequest="400"
+                        Aspect="AspectFill" />
+                <Label
+                        Text="Another Fail"
+                        FontSize="32"
+                        TextColor="White"
+                        VerticalOptions="Center"
+                        Margin="12" />
 
+            </Grid>
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
         </VerticalStackLayout>
     </ScrollView>
 
