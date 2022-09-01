@@ -6,10 +6,10 @@ namespace MauiFails;
 [Application]
 public class MainApplication : MauiApplication
 {
-	public MainApplication(IntPtr handle, JniHandleOwnership ownership)
-		: base(handle, ownership)
-	{
-	}
+       public MainApplication(IntPtr handle, JniHandleOwnership ownersh
+              : base(handle, owne
+    {
+    }
 
-	protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
+       protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
 }
