@@ -12,6 +12,7 @@
             <Grid
                 HeightRequest="180"
                 IsClippedToBounds="True">
+                <Border Background="Red" WidthRequest="50" HeightRequest="80" ZIndex="9999" />
                 <Image
                     Source="https://images.unsplash.com/photo-1656383901557-9f4db8483d3b"
                     HorizontalOptions="End"
