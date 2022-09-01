@@ -2,38 +2,38 @@
 
 public partial class MainPage : ContentPage
 {
-       int count =
+	int count = 0;
 
-       public MainPag
-    {
-              InitializeCompon
+	public MainPage()
+	{
+		InitializeComponent();
+	}
+
+	Random rand = new Random();
+	private async void OnCounterClicked(object sender, EventArgs e)
+	{
+		count++;
+
+		if (count == 1)
+			CounterBtn.Text = $"Clicked {count} time";
+		else
+			CounterBtn.Text = $"Clicked {count} times";
+
+		SemanticScreenReader.Announce(CounterBtn.Text);
+
+		await MovingBtnGrid.TranslateTo(rand.Next(0, 200), rand.Next(0, 200), 250, Easing.BounceOut);
+		MovingBtn.WidthTo(rand.Next(30, 200), 400, Easing.BounceIn);
+	}
+
+	private void OnMovingButtonClicked(object sender, EventArgs e)
+	{
+		MovingBtn.Text = DateTime.Now.ToString();
+		Console.WriteLine("click");
     }
 
-       Random rand = new Random
-       private async void OnCounterClicked(object sender, EventArgs
-    {
-              co
-
-              if (count
-                     CounterBtn.Text = $"Clicked {coun
-        else
-                     CounterBtn.Text = $"Clicked {count
-
-              SemanticScreenReader.Announce(CounterBtn.
-
-              await MovingBtnGrid.TranslateTo(rand.Next(0, 200), rand.Next(0, 200), 250, Easing.Bounc
-              MovingBtn.WidthTo(rand.Next(30, 200), 400, Easing.Boun
-    }
-
-       private void OnMovingButtonClicked(object sender, EventArgs
-    {
-              MovingBtn.Text = DateTime.Now.ToStr
-              Console.WriteLine("click");
-    }
-
-       private void BorderTapped(object sender, EventArgs
-    {
-              Console.WriteLine("border tapped");
+	private void BorderTapped(object sender, EventArgs e)
+	{
+		Console.WriteLine("border tapped");
     }
 }
 
