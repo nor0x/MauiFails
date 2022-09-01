@@ -10,21 +10,21 @@
             Padding="30,0"
             VerticalOptions="Center">
             <Grid
-                    HeightRequest="180"
-                    IsClippedToBounds="True">
-                    <Image
-                        Source="https://images.unsplash.com/photo-1656383901557-9f4db8483d3b"
-                        HorizontalOptions="End"
-                        WidthRequest="400"
-                        Aspect="AspectFill" />
-                                       <Label
-                        Text="Another Fail"
-                        FontSize="32"
-                        TextColor="White"
-                        VerticalOptions="Center"
-                        Margin="12" />
+                HeightRequest="180"
+                IsClippedToBounds="True">
+                <Image
+                    Source="https://images.unsplash.com/photo-1656383901557-9f4db8483d3b"
+                    HorizontalOptions="End"
+                    WidthRequest="400"
+                    Aspect="AspectFill" />
+                <Label
+                    Text="Another Fail"
+                    FontSize="32"
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    Margin="12" />
 
-                </Grid>
+            </Grid>
             <Image
                 Source="dotnet_bot.png"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
@@ -49,22 +49,25 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
-            <Border x:Name="MovingBtnGrid"
-                    WidthRequest="300"
-                    HeightRequest="70"
-                    BackgroundColor="Orange">
+            <Border
+                x:Name="MovingBtnGrid"
+                WidthRequest="300"
+                HeightRequest="70"
+                BackgroundColor="Orange">
                 <Border.GestureRecognizers>
                     <TapGestureRecognizer Tapped="BorderTapped" />
                 </Border.GestureRecognizers>
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="24" />
                 </Border.StrokeShape>
-                <Grid  BackgroundColor="Green" Margin="12">
+                <Grid
+                    BackgroundColor="Green"
+                    Margin="12">
                     <Label
-                x:Name="MovingBtn"
-                Text="I'm moving"
-                ZIndex="9999"
-                HorizontalOptions="Center" >
+                        x:Name="MovingBtn"
+                        Text="I'm moving"
+                        ZIndex="9999"
+                        HorizontalOptions="Center">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnMovingButtonClicked" />
                         </Label.GestureRecognizers>
@@ -72,19 +75,19 @@
                 </Grid>
             </Border>
             <Grid
-                    HeightRequest="180"
-                    IsClippedToBounds="True">
+                HeightRequest="180"
+                IsClippedToBounds="True">
                 <Image
-                        Source="https://images.unsplash.com/photo-1656383901557-9f4db8483d3b"
-                        HorizontalOptions="End"
-                        WidthRequest="400"
-                        Aspect="AspectFill" />
+                    Source="https://images.unsplash.com/photo-1656383901557-9f4db8483d3b"
+                    HorizontalOptions="End"
+                    WidthRequest="400"
+                    Aspect="AspectFill" />
                 <Label
-                        Text="Another Fail"
-                        FontSize="32"
-                        TextColor="White"
-                        VerticalOptions="Center"
-                        Margin="12" />
+                    Text="Another Fail"
+                    FontSize="32"
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    Margin="12" />
 
             </Grid>
             <Image
