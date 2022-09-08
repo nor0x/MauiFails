@@ -2,6 +2,7 @@
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiFails"
     x:Class="MauiFails.MainPage">
 
     <ScrollView>
@@ -9,11 +10,46 @@
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
+            <Label
+                Text="Another Fail"
+                FontSize="32"
+                TextColor="White"
+                VerticalOptions="Center"
+                Margin="12" />
+            <Grid
+                x:Name="ContainerGrid"
+                ColumnDefinitions="*,*,*"
+                HeightRequest="500"
+                BackgroundColor="MediumPurple">
+                <Border
+                    WidthRequest="400"
+                    HeightRequest="400"
+                    Background="Tomato">
+                    <Grid>
+                        <Image
+                            x:Name="firstImage"
+                            Source="grid.png"
+                            WidthRequest="800"
+                            HeightRequest="800" />
+                    </Grid>
+                </Border>
+                <local:MyBorder Grid.Column="2" />
+            </Grid>
+            <Button
+                WidthRequest="400"
+                HorizontalOptions="Center"
+                Text="move images"
+                Clicked="MoveImagesClicked" />
+
             <Grid
                 HeightRequest="180"
                 IsClippedToBounds="True">
                 <!-- ZIndex causes crash in release mode -->
-                <Border Background="Red" WidthRequest="50" HeightRequest="80" ZIndex="9999" />
+                <Border
+                    Background="Red"
+                    WidthRequest="50"
+                    HeightRequest="80"
+                    ZIndex="9999" />
                 <Image
                     Source="https://images.unsplash.com/photo-1656383901557-9f4db8483d3b"
                     HorizontalOptions="End"

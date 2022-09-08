@@ -2,38 +2,68 @@
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+    int count = 0;
+    Image secondImage;
+    public MainPage()
+    {
+        InitializeComponent();
 
-	public MainPage()
-	{
-		InitializeComponent();
-	}
-
-	Random rand = new Random();
-	private async void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
-
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
-
-		await MovingBtnGrid.TranslateTo(rand.Next(0, 200), rand.Next(0, 200), 250, Easing.BounceOut);
-		MovingBtn.WidthTo(rand.Next(30, 200), 400, Easing.BounceIn);
-	}
-
-	private void OnMovingButtonClicked(object sender, EventArgs e)
-	{
-		MovingBtn.Text = DateTime.Now.ToString();
-		Console.WriteLine("click");
+        var mycontrol = new Border()
+        {
+            WidthRequest = 400,
+            HeightRequest = 400,
+            Background = Colors.Green,
+            Content = new Grid()
+            {
+                Children =
+                {
+                    new Image()
+                    {
+                        Source = "grid.png",
+                        WidthRequest = 800,
+                        HeightRequest = 800,
+                    }
+                }
+            }
+        };
+        if(mycontrol.Content is Grid g && g.Children.FirstOrDefault() is Image img)
+        {
+            secondImage = img;
+        }
+        //ContainerGrid.Add(mycontrol, 1, 0);
     }
 
-	private void BorderTapped(object sender, EventArgs e)
-	{
-		Console.WriteLine("border tapped");
+    Random rand = new Random();
+    private async void OnCounterClicked(object sender, EventArgs e)
+    {
+        count++;
+
+        if (count == 1)
+            CounterBtn.Text = $"Clicked {count} time";
+        else
+            CounterBtn.Text = $"Clicked {count} times";
+
+        SemanticScreenReader.Announce(CounterBtn.Text);
+
+        await MovingBtnGrid.TranslateTo(rand.Next(0, 200), rand.Next(0, 200), 250, Easing.BounceOut);
+        MovingBtn.WidthTo(rand.Next(30, 200), 400, Easing.BounceIn);
+    }
+
+    private void OnMovingButtonClicked(object sender, EventArgs e)
+    {
+        MovingBtn.Text = DateTime.Now.ToString();
+        Console.WriteLine("click");
+    }
+
+    private void BorderTapped(object sender, EventArgs e)
+    {
+        Console.WriteLine("border tapped");
+    }
+    
+    private void MoveImagesClicked(object sender, EventArgs e)
+    {
+        firstImage.TranslateTo(300, 300, 1000, Easing.Linear);
+        secondImage.TranslateTo(300, 300, 1000, Easing.Linear);
     }
 }
 
