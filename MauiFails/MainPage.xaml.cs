@@ -65,6 +65,10 @@ public partial class MainPage : ContentPage
         firstImage.TranslateTo(300, 300, 1000, Easing.Linear);
         secondImage.TranslateTo(300, 300, 1000, Easing.Linear);
     }
+    private void OpenFlyoutButton_Clicked(object sender, EventArgs e)
+    {
+        Shell.Current.FlyoutIsPresented = !Shell.Current.FlyoutIsPresented;
+    }
 }
 
 public static class Extensions

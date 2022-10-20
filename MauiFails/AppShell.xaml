@@ -11,4 +11,92 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
+    <Shell.FlyoutContent>
+        <Grid
+            HorizontalOptions="FillAndExpand"
+            RowDefinitions="32,*">
+            <Slider
+                Grid.Row="0"
+                Margin="12,0"
+                ThumbColor="Black"
+                MinimumTrackColor="Black"
+                HorizontalOptions="FillAndExpand" />
+            <ScrollView Grid.Row="1">
+                <VerticalStackLayout
+                    x:Name="PlayingCollection"
+                    HorizontalOptions="Center">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Grid
+                                Margin="12"
+                                WidthRequest="180"
+                                HeightRequest="230"
+                                RowDefinitions="*,Auto">
+                                <Grid.Clip>
+                                    <RoundRectangleGeometry
+                                        Rect="0,0,180,230"
+                                        CornerRadius="8" />
+                                </Grid.Clip>
+
+                                <Image
+                                    Source="https://images.unsplash.com/photo-1491597779497-038f35d6beb2"
+                                    HorizontalOptions="Center"
+                                    Aspect="AspectFill"
+                                    Grid.Row="0"
+                                    WidthRequest="180"
+                                    HeightRequest="230" />
+                                <VerticalStackLayout
+                                    VerticalOptions="End"
+                                    Grid.Row="1"
+                                    Background="Red">
+                                    <Label
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        TextColor="White"
+                                        Margin="6,6,0,0"
+                                        HorizontalOptions="Start" />
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Button
+                                            Grid.Column="0"
+                                            Padding="0"
+                                            WidthRequest="44"
+                                            HeightRequest="44"
+                                            FontSize="18"
+                                            VerticalOptions="Center"
+                                            BorderColor="Transparent"
+                                            BackgroundColor="Transparent"
+                                            Text="do some stuff" />
+                                        <Slider
+                                            Grid.Column="1"
+                                            VerticalOptions="Center"
+                                            ThumbColor="Black"
+                                            MinimumTrackColor="Black"
+                                            Margin="12,0"
+                                            HorizontalOptions="FillAndExpand" />
+                                    </Grid>
+                                </VerticalStackLayout>
+                                <Button
+                                    Text="X"
+                                    BackgroundColor="#ccffffff"
+                                    TextColor="#18181C"
+                                    FontSize="22"
+                                    CornerRadius="15"
+                                    WidthRequest="30"
+                                    Padding="0"
+                                    HeightRequest="30"
+                                    HorizontalOptions="End"
+                                    VerticalOptions="Start"
+                                    Margin="0,6,6,0" />
+                            </Grid>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+    </Shell.FlyoutContent>
+    
 </Shell>
